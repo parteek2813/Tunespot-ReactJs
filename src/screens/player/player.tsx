@@ -1,7 +1,7 @@
 import React from "react";
 
 const Player = () => {
-  return <div>player</div>;
+  return <div className="screen-container">player</div>;
 };
 
 export default Player;

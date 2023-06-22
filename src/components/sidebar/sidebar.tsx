@@ -23,7 +23,7 @@ const Sidebar = () => {
           />
           <SidebarButton
             buttonTitle="Search"
-            to="/"
+            to="/player"
             icon={<AiOutlineSearch />}
           />
           <SidebarButton

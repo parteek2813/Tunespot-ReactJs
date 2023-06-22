@@ -3,15 +3,27 @@ a {
 }
 .btn-body {
   height: 80px;
-  width: 80px;
+  width: 110px;
   border-radius: 20px;
-  color: rgb(253, 244, 244);
+  color: #c8bfcb;
   display: flex;
   align-items: center;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+  background-color: rgb(94, 84, 212, 0);
+}
+
+.btn-body:hover {
+  color: white;
+}
+.btn-body.active {
+  background-color: #5e54d4;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .btn-title {
   font-weight: bold;
   margin-left: 12px;
-  font-size: 18px;
+  font-size: 17px;
 }
