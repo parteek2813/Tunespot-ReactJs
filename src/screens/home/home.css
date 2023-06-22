@@ -1,0 +1,7 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(94, 67, 212);
+  border-radius: 10px;
+  display: flex;
+}

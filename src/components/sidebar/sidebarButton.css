@@ -1,0 +1,17 @@
+a {
+  text-decoration: none !important;
+}
+.btn-body {
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  color: rgb(253, 244, 244);
+  display: flex;
+  align-items: center;
+}
+
+.btn-title {
+  font-weight: bold;
+  margin-left: 12px;
+  font-size: 18px;
+}
