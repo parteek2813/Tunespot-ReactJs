@@ -8,7 +8,6 @@ import {
   AiTwotoneHeart,
   AiFillPlayCircle,
 } from "react-icons/ai";
-
 import { FaSignOutAlt } from "react-icons/fa";
 
 const Sidebar = () => {
@@ -43,14 +42,15 @@ const Sidebar = () => {
         <div className="profile-body">
           <img className="profile-image" src={Profile} alt="profile-image" />
 
-          <p>
+          {/* <p>
             <SidebarButton
               buttonTitle="Sign Out"
               to=""
               icon={<FaSignOutAlt />}
             />
-          </p>
+          </p> */}
         </div>
+        <button className="sign-out-btn">Hey</button>
       </div>
     </>
   );

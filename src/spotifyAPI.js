@@ -1,10 +1,10 @@
-const axios = require("axios");
+import axios from "axios";
 
 const options = {
   method: "GET",
   url: "https://spotify23.p.rapidapi.com/search/",
   params: {
-    q: "arijit",
+    q: "<REQUIRED>",
     type: "multi",
     offset: "0",
     limit: "10",

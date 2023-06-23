@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
 import options from "../../spotifyAPI";
 import axios from "axios";

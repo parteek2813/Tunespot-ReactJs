@@ -7,7 +7,7 @@ import UseAuth from "./hooks/useAuth";
 function App() {
   const isLogin = UseAuth(); // return either true or false
 
-  return isLogin ? <Protected /> : <Public />;
+  return isLogin ? <Home /> : <Public />;
 
   //  <div className="App">{/* <Home /> */}</div>;
 }

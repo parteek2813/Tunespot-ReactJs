@@ -1,0 +1,74 @@
+.library-body {
+  width: 94%;
+  height: 88%;
+  padding: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  justify-content: space-between;
+}
+
+.playlist-card {
+  position: relative;
+  width: 15%;
+  height: 45%;
+  border-radius: 20px;
+  background-color: #acb9cf;
+  border: 1px solid #a6a1a1;
+  padding: 1%;
+  margin-bottom: 2%;
+  background: rgb(143, 170, 215);
+  background: linear-gradient(
+    90deg,
+    rgba(143, 170, 215, 1) 0%,
+    rgba(143, 170, 215, 1) 44%,
+    rgba(124, 184, 196, 1) 100%
+  );
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+}
+
+.playlist-card:hover .album-fade {
+  opacity: 1;
+}
+
+.album-image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.album-title {
+  font-weight: 800;
+  font-style: 16px;
+  color: rgb(31, 27, 27);
+  margin: 10px 0px 10px;
+}
+
+.album-subtitle {
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0px;
+  color: #0109177c;
+}
+
+.album-fade {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 84%;
+  height: 22%;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(129, 165, 172, 0) 10%,
+    rgb(129, 165, 172, 1) 100%
+  );
+  padding: 8%;
+  padding-bottom: 0%;
+  transition: 0.5s ease;
+}

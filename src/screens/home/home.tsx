@@ -1,5 +1,4 @@
-import React from "react";
-// import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Library from "../library/library";
 import UserFeed from "../userFeed/userFeed";
@@ -8,20 +7,35 @@ import Favorites from "../favorites/favorites";
 import "./home.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import Login from "../auth/login";
+import options from "../../spotifyAPI";
 
 const Home = () => {
-  return (
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    if (!token) {
+      const _token = options.headers["X-RapidAPI-Key"];
+      window.localStorage.setItem("token", _token);
+      setToken(_token);
+    } else {
+      setToken(token);
+    }
+  }, []);
+
+  return !token ? (
+    <Login />
+  ) : (
     <Router>
       <div className="main-container">
-        <Login />
-        {/* <Sidebar />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Library />} />
           <Route path="/feed" element={<UserFeed />} />
           <Route path="/trending" element={<Library />} />
           <Route path="/player" element={<Player />} />
           <Route path="/favorites" element={<Favorites />} />
-        </Routes> */}
+        </Routes>
       </div>
     </Router>
   );
