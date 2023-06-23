@@ -3,4 +3,16 @@
   height: 100%;
   background-color: #acb9cf;
   border-radius: 8px;
+  background-color: #f9fdff;
+  opacity: 1;
+  background-image: radial-gradient(circle at center center, #d6d9fc, #f9fdff),
+    repeating-radial-gradient(
+      circle at center center,
+      #d6d9fc,
+      #d6d9fc,
+      38px,
+      transparent 76px,
+      transparent 38px
+    );
+  background-blend-mode: multiply;
 }
