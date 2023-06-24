@@ -1,7 +1,7 @@
 import React from "react";
 import "./queue.css";
 
-interface Tracks {
+interface Track {
   artists: Array<any>;
   disc_number: number;
   duration_ms: number;
@@ -19,8 +19,10 @@ interface Tracks {
   uri: string;
 }
 
+type MyArray = Track[];
+
 interface QueueProps {
-  tracks: Tracks | any;
+  tracks: MyArray | any;
   setCurrentIndex: any;
 }
 
@@ -28,21 +30,21 @@ const Queue: React.FC<QueueProps> = (props) => {
   const { tracks, setCurrentIndex } = props;
   console.log(tracks);
 
+  if (!Array.isArray(tracks)) {
+    return <div>Error: Invalid tracks data</div>;
+  }
+
   return (
     <div className="queue-container flex">
       <div className="queue flex">
         <p className="upNext">Up Next</p>
         <div className="queue-list">
-          {/* {tracks?.map((track, index) => (
-            <div
-              key={index + "key"}
-              className="queue-item flex"
-              onClick={() => setCurrentIndex(index)}
-            >
-              <p className="track-name">{track?.track?.name}</p>
+          {tracks?.map((track: Track) => (
+            <div className="queue-item flex" onClick={() => setCurrentIndex()}>
+              <p className="track-name">{track?.name}</p>
               <p>0:30</p>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
