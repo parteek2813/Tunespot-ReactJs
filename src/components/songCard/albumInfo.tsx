@@ -26,16 +26,31 @@ interface AlbumInfoProps {
 const AlbumInfo: React.FC<AlbumInfoProps> = (props) => {
   const { album } = props;
 
+  const artist: any[] = [];
+  album?.artists?.forEach((element) => {
+    artist.push(element.name);
+  });
+
   console.log(album); // getting the artists array here
 
   return (
-    <div>
-      <div className="albumName-Container"></div>
-      <div className="album-info"></div>
+    <div className="albumInfo-card">
+      <div className="albumName-Container">
+        <div className="marquee">
+          {album.name + " - " + artist?.join(",")} - {album.type}
+        </div>
+      </div>
+
+      {/* <div className="album-info"> */}
+      {/* <p>{`${album.name} is an ${album.type}`}</p> */}
+      {/* </div> */}
       <div className="album-realease"></div>
-      <a href={album.uri} target="_blank" rel="noopener noreferrer">
-        <button>Full Listen</button>
-      </a>
+
+      <div className="parent">
+        <a href={album.uri} target="_blank" rel="noopener noreferrer">
+          <button className="btn-gradient-2">Full Listen!</button>
+        </a>
+      </div>
     </div>
   );
 };

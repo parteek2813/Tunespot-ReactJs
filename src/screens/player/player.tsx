@@ -36,13 +36,13 @@ const Player = () => {
 
       settracks(response.data);
       setCurrentTrack(response.data.albums[0].tracks.items[0]);
-      console.log(response.data.albums[0].tracks.items[0]);
+      // console.log(response.data.albums[0].tracks.items[0]);
       setImageUrl(response.data.albums[0].images[0].url);
 
       // tracks link "name" = resoponse.data.albums[0].tracks.items[0].name
       // images link "url" = response.data.albums[0].images[0].url;
 
-      console.log(response.data.albums[0].images[0].url);
+      // console.log(response.data.albums[0].images[0].url);
     } catch (error) {
       console.log("Errror has occured in fetchData");
     }

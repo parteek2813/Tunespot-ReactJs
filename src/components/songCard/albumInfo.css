@@ -1,0 +1,66 @@
+.albumInfo-card {
+  margin-top: 10px;
+  width: 80%;
+}
+
+.albumInfo-card p {
+  margin: 5px auto !important;
+}
+
+.albumName-Container {
+  font-style: 20px;
+  font-weight: 700;
+  color: black;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.album-info {
+  font-style: 14px;
+  font-weight: 500;
+  color: black;
+}
+
+.album-realease {
+  font-style: 12px;
+  font-weight: 400;
+  color: black;
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-gradient-2 {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+}
+
+.btn-gradient-2 {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  color: darkblue;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
