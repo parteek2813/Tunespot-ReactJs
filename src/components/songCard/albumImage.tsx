@@ -7,8 +7,12 @@ interface AlbumImageProps {
 
 const AlbumImage: React.FC<AlbumImageProps> = (props) => {
   const { url } = props;
-  console.log(url);
-  return <div>AlbumImage</div>;
+
+  return (
+    <div>
+      <img src={url} alt="" />
+    </div>
+  );
 };
 
 export default AlbumImage;

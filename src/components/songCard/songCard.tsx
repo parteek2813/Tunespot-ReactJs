@@ -5,21 +5,22 @@ import AlbumInfo from "./albumInfo";
 import { Url } from "url";
 
 interface Album {
-  images?: {
-    url: string;
-  };
+  name: string;
 }
 
+// flow -- songCard.tsx to albumInfo.tsx with albuminfos / albumUrl.tsx with url's
+
 interface SongCardProps {
-  album: Album;
+  album: Album | any;
+  url: string;
 }
 
 const SongCard: React.FC<SongCardProps> = (props) => {
-  const { album } = props;
+  const { album, url } = props;
 
   return (
     <div className="songCard-body">
-      {album.images?.url && <AlbumImage url={album.images?.url} />}
+      {url && <AlbumImage url={url} />}
       <AlbumInfo album={album} />
     </div>
   );

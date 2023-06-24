@@ -13,6 +13,7 @@ const Player = () => {
   const [tracks, settracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState({});
+  const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     if (newLocation) {
@@ -33,12 +34,15 @@ const Player = () => {
         },
       });
 
-      // settracks(response.data[0]);
-      console.log(response.data.albums);
-      // setCurrentTrack(response.data[0]["albums"][0]["tracks"]["items"]["0"]);
-      // setCurrentTrack(response.data[0]["albums"][0]);
+      settracks(response.data);
+      setCurrentTrack(response.data.albums[0].tracks.items[0]);
+      console.log(response.data.albums[0].tracks.items[0]);
+      setImageUrl(response.data.albums[0].images[0].url);
 
-      console.log(response.data);
+      // tracks link "name" = resoponse.data.albums[0].tracks.items[0].name
+      // images link "url" = response.data.albums[0].images[0].url;
+
+      console.log(response.data.albums[0].images[0].url);
     } catch (error) {
       console.log("Errror has occured in fetchData");
     }
@@ -48,7 +52,7 @@ const Player = () => {
     <div className="screen-container flex">
       <div className="left-player-body"></div>
       <div className="right-player-body">
-        <SongCard album={currentTrack} />
+        <SongCard album={currentTrack} url={imageUrl} />
         <Queue />
       </div>
     </div>
