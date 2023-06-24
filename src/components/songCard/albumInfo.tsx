@@ -26,9 +26,18 @@ interface AlbumInfoProps {
 const AlbumInfo: React.FC<AlbumInfoProps> = (props) => {
   const { album } = props;
 
-  console.log(album.name); // getting the artists array here
+  console.log(album); // getting the artists array here
 
-  return <div>AlbumInfo</div>;
+  return (
+    <div>
+      <div className="albumName-Container"></div>
+      <div className="album-info"></div>
+      <div className="album-realease"></div>
+      <a href={album.uri} target="_blank" rel="noopener noreferrer">
+        <button>Full Listen</button>
+      </a>
+    </div>
+  );
 };
 
 export default AlbumInfo;

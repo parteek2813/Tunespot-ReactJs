@@ -19,7 +19,7 @@ const SongCard: React.FC<SongCardProps> = (props) => {
   const { album, url } = props;
 
   return (
-    <div className="songCard-body">
+    <div className="songCard-body flex">
       {url && <AlbumImage url={url} />}
       <AlbumInfo album={album} />
     </div>
