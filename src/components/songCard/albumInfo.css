@@ -18,6 +18,7 @@
   white-space: nowrap;
   display: inline-block;
   animation: marquee 12s linear infinite;
+  padding-left: 100%;
 }
 
 @keyframes marquee {

@@ -18,6 +18,7 @@ const Player = () => {
   useEffect(() => {
     if (newLocation) {
       fetchData();
+      console.log(tracks);
     }
   }, [location["state"]]);
 
@@ -34,7 +35,7 @@ const Player = () => {
         },
       });
 
-      settracks(response.data);
+      settracks(response.data.albums[0].tracks.items[0]);
       setCurrentTrack(response.data.albums[0].tracks.items[0]);
       // console.log(response.data.albums[0].tracks.items[0]);
       setImageUrl(response.data.albums[0].images[0].url);
@@ -53,7 +54,7 @@ const Player = () => {
       <div className="left-player-body"></div>
       <div className="right-player-body">
         <SongCard album={currentTrack} url={imageUrl} />
-        <Queue />
+        <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
       </div>
     </div>
   );
