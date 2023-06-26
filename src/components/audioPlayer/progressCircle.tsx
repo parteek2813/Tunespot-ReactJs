@@ -1,5 +1,6 @@
 import React from "react";
 import "./progressCircle.css";
+import image from "../../utils/music-image.jpg";
 
 interface ProgressProps {
   percentage: number;
@@ -12,6 +13,7 @@ interface CircleProps {
   strokeWidth: string;
   color: string;
   size: number;
+  percentage: number;
 }
 
 type UnionProps = ProgressProps & CircleProps;
@@ -58,6 +60,32 @@ const ProgressCircle: React.FC<UnionProps> = (props) => {
             isPlaying={false}
           />
         </g>
+        <defs>
+          <clipPath id="myCircle">
+            <circle cx="50%" cy="50%" r={size / 2 - 30} fill="#FFFFFF" />
+          </clipPath>
+          <clipPath id="myInnerCircle">
+            <circle cx="50%" cy="50%" r={size / 2 - 100} fill="#FFFFFF" />
+          </clipPath>
+        </defs>
+        <image
+          className={isPlaying ? "active" : ""}
+          x={30}
+          y={30}
+          width={2 * (size / 2 - 30)}
+          height={2 * (size / 2 - 30)}
+          href="https://pngimg.com/uploads/vinyl/vinyl_PNG107.png"
+          clipPath="url(#myCircle)"
+        />
+        <image
+          className={isPlaying ? "active" : ""}
+          x={100}
+          y={100}
+          width={2 * (size / 2 - 100)}
+          height={2 * (size / 2 - 100)}
+          href={image}
+          clipPath="url(#myInnerCircle)"
+        />
       </svg>
     </div>
   );
