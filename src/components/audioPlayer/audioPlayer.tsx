@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./audioPlayer.css";
 import ProgressCircle from "./progressCircle";
 import WaveAnimation from "./waveAnimation";
 import Controls from "./controls";
+import { Tracks } from "../../utils/types";
+
+interface TracksProps {
+  total: Tracks[];
+}
 
 interface currentTrack {
   artists: Array<any>;
@@ -13,11 +18,28 @@ interface currentTrack {
 
 interface audioPlayerProps {
   currentTrack: currentTrack | any;
-  isPlaying: boolean;
+  currentIndex: number;
+  setCurrentIndex: number | any;
 }
 
-const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
-  const { currentTrack, isPlaying } = props;
+type BigProps = TracksProps & currentTrack & audioPlayerProps;
+
+const AudioPlayer: React.FC<BigProps> = (props) => {
+  const { currentTrack, currentIndex, setCurrentIndex, total } = props;
+
+  console.log(total);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [trackProgress, setTrackProgress] = useState(0);
+  var audioSource = total[0]?.preview_url;
+  const audioRef = useRef(new Audio());
+
+  const intervalRef = useRef();
+
+  const isReady = useRef(false);
+
+  const { duration } = audioRef.current;
+  const currentPercentage = duration ? (trackProgress / duration) * 100 : 0;
+
   console.log(currentTrack);
 
   const artist: any[] = [];
@@ -30,7 +52,7 @@ const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
     <div className="player-body flex">
       <div className="player-left-body">
         <ProgressCircle
-          percentage={75}
+          percentage={currentPercentage}
           isPlaying={true}
           //   image={}
           size={300}
@@ -46,7 +68,7 @@ const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
         <div className="player-right-bottom flex">
           <div className="song-duration flex">
             <p className="duration">0:30</p>
-            <WaveAnimation isPlaying={isPlaying} />
+            <WaveAnimation isPlaying={true} />
             <p className="duration">0:30</p>
           </div>
           <Controls
