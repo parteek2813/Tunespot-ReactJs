@@ -16,7 +16,7 @@ const Library = () => {
     try {
       const response = await axios.request(options);
       setAlbums(response.data.albums.items);
-      console.log(response.data.albums?.items[0].data.uri);
+      // console.log(response.data.albums?.items[0].data.uri); //getting the uri
     } catch (error) {
       console.log("Errror has occured in fetchData");
     }

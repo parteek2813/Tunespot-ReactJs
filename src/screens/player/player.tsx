@@ -5,14 +5,15 @@ import options from "../../spotifyAPI";
 import axios from "axios";
 import SongCard from "../../components/songCard/songCard";
 import Queue from "../../components/queue/queue";
+import { Tracks } from "../../utils/types"; // Import Tracks interface
 
 const Player = () => {
   // Get the id of the albums
   const location = useLocation();
   const newLocation = location["state"]["id"].split(":")[2];
-  const [tracks, settracks] = useState([]);
+  const [tracks, settracks] = useState<Tracks[]>([]);
   const [currentTrack, setCurrentTrack] = useState({});
-  const [currentIndex, setCurrentIndex] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -35,11 +36,11 @@ const Player = () => {
         },
       });
 
-      settracks(response.data.albums[0].tracks.items[0]);
+      settracks(response.data.albums[0].tracks.items);
       setCurrentTrack(response.data.albums[0].tracks.items[0]);
       // console.log(response.data.albums[0].tracks.items[0]);
       setImageUrl(response.data.albums[0].images[0].url);
-
+      // console.log(response.data);
       // tracks link "name" = resoponse.data.albums[0].tracks.items[0].name
       // images link "url" = response.data.albums[0].images[0].url;
 
@@ -48,6 +49,10 @@ const Player = () => {
       console.log("Errror has occured in fetchData");
     }
   };
+
+  useEffect(() => {
+    setCurrentTrack(tracks[currentIndex]);
+  }, [currentIndex]);
 
   return (
     <div className="screen-container flex">
