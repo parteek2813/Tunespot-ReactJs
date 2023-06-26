@@ -1,6 +1,8 @@
 import React from "react";
 import "./audioPlayer.css";
 import ProgressCircle from "./progressCircle";
+import WaveAnimation from "./waveAnimation";
+import Controls from "./controls";
 
 interface currentTrack {
   artists: Array<any>;
@@ -11,10 +13,11 @@ interface currentTrack {
 
 interface audioPlayerProps {
   currentTrack: currentTrack | any;
+  isPlaying: boolean;
 }
 
 const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
-  const { currentTrack } = props;
+  const { currentTrack, isPlaying } = props;
   console.log(currentTrack);
 
   const artist: any[] = [];
@@ -36,9 +39,24 @@ const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
         />
       </div>
 
-      <div className="player-right-body">
+      <div className="player-right-body flex">
         <p className="song-title">{currentTrack?.name}</p>
         <p className="song-artist"> {artist.join(" | ")}</p>
+
+        <div className="player-right-bottom flex">
+          <div className="song-duration flex">
+            <p className="duration">0:30</p>
+            <WaveAnimation isPlaying={isPlaying} />
+            <p className="duration">0:30</p>
+          </div>
+          <Controls
+          // isPlaying={isPlaying}
+          // setIsPlaying={setIsPlaying}
+          // handleNext={handleNext}
+          // handlePrev={handlePrev}
+          // total={total}
+          />
+        </div>
       </div>
     </div>
   );
