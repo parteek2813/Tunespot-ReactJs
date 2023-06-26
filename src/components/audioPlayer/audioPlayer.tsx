@@ -24,6 +24,7 @@ const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
           //   image={}
           size={300}
           color="#C96850"
+          strokeWidth={""}
         />
       </div>
 
