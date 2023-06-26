@@ -3,6 +3,7 @@ import "./audioPlayer.css";
 import ProgressCircle from "./progressCircle";
 
 interface currentTrack {
+  artists: Array<any>;
   name: string;
 }
 
@@ -14,6 +15,13 @@ interface audioPlayerProps {
 
 const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
   const { currentTrack } = props;
+  console.log(currentTrack);
+
+  const artist: any[] = [];
+  // name location: currentTrack.artists[0].name
+  currentTrack?.artists?.forEach((element: any) => {
+    artist.push(element.name);
+  });
 
   return (
     <div className="player-body flex">
@@ -28,7 +36,10 @@ const AudioPlayer: React.FC<audioPlayerProps> = (props) => {
         />
       </div>
 
-      <div className="player-right-body"></div>
+      <div className="player-right-body">
+        <p className="song-title">{currentTrack?.name}</p>
+        <p className="song-artist"> {artist.join(" | ")}</p>
+      </div>
     </div>
   );
 };
