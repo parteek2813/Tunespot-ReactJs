@@ -5,7 +5,9 @@ import options from "../../spotifyAPI";
 import axios from "axios";
 import SongCard from "../../components/songCard/songCard";
 import Queue from "../../components/queue/queue";
-import { Tracks } from "../../utils/types"; // Import Tracks interface
+import { Tracks } from "../../utils/types";
+import AudioPlayer from "../../components/audioPlayer/audioPlayer";
+// Import Tracks interface
 
 const Player = () => {
   // Get the id of the albums
@@ -56,7 +58,9 @@ const Player = () => {
 
   return (
     <div className="screen-container flex">
-      <div className="left-player-body"></div>
+      <div className="left-player-body">
+        <AudioPlayer currentTrack={currentTrack} />
+      </div>
       <div className="right-player-body">
         <SongCard album={currentTrack} url={imageUrl} />
         <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
