@@ -28,18 +28,20 @@ const Home = () => {
   // ) : (
 
   return (
-    <Router>
-      <div className="main-container">
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Library />} />
-          <Route path="/feed" element={<UserFeed />} />
-          <Route path="/trending" element={<Library />} />
-          <Route path="/player" element={<Player />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Router>
+        <div className="main-container">
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Library />} />
+            <Route path="/feed" element={<UserFeed />} />
+            <Route path="/trending" element={<Library />} />
+            <Route path="/player" element={<Player />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 };
 

@@ -11,16 +11,9 @@ const options = {
     numberOfTopResults: "5",
   },
   headers: {
-    "X-RapidAPI-Key": "5291081f0bmsh18d80fd715782afp1d3014jsnd0d98f6a3175",
+    "X-RapidAPI-Key": "c0ee686d86msh5a20250be5a8e1ep126535jsn0e03929b1137",
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };
-
-// try {
-//   const response = await axios.request(options);
-//   console.log(response.data);
-// } catch (error) {
-//   console.error(error);
-// }
 
 export default options;

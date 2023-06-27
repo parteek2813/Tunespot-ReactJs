@@ -41,7 +41,7 @@ const Sidebar = () => {
 
         <div className="profile-body">
           <img className="profile-image" src={Profile} alt="profile-image" />
-
+          <p className="profile-text">Hello! Parteek Kumar</p>
           {/* <p>
             <SidebarButton
               buttonTitle="Sign Out"
@@ -50,7 +50,6 @@ const Sidebar = () => {
             />
           </p> */}
         </div>
-        <button className="sign-out-btn">Hey</button>
       </div>
     </>
   );

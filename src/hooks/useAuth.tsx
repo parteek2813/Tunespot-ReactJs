@@ -13,7 +13,7 @@ const keycloak = new Keycloak({
 
 const UseAuth = () => {
   const isRun = useRef(false);
-  const [isLogin, setLogin] = useState(false);
+  const [isLogin, setLogin] = useState({});
 
   useEffect(() => {
     if (isRun.current) return;

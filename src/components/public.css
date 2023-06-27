@@ -1,0 +1,23 @@
+.login-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.login-error p {
+  margin-bottom: 10px;
+}
+
+.login-error a {
+  color: #721c24;
+  text-decoration: none;
+}
+
+.login-error a:hover {
+  text-decoration: underline;
+}
