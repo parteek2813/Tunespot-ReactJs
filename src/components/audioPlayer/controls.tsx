@@ -35,7 +35,6 @@ const Controls: React.FC<ControlProps> = (props) => {
           </div>
         </div>
       </IconContext.Provider>
-      <p className="total"> Total Songs: {total} </p>
     </>
   );
 };

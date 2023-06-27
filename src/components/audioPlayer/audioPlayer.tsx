@@ -28,7 +28,7 @@ type BigProps = TracksProps & currentTrack & audioPlayerProps;
 const AudioPlayer: React.FC<BigProps> = (props) => {
   const { currentTrack, currentIndex, setCurrentIndex, total } = props;
 
-  // console.log(total.length); // getting tracks array here
+  const totalTracks = total.length; // getting tracks array here
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
   var audioSource = total[currentIndex]?.preview_url;
@@ -173,6 +173,7 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
           <div className="volume-controls">
             <Slider value={volume} onChange={handleVolumeChange} />
           </div>
+          <p className="total"> Total Songs: {totalTracks} </p>
         </div>
       </div>
     </div>
