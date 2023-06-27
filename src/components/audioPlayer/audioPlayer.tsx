@@ -4,6 +4,7 @@ import ProgressCircle from "./progressCircle";
 import WaveAnimation from "./waveAnimation";
 import Controls from "./controls";
 import { Tracks } from "../../utils/types";
+import Slider from "./slider";
 
 interface TracksProps {
   total: Tracks[];
@@ -31,6 +32,7 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
   var audioSource = total[currentIndex]?.preview_url;
+  const [volume, setVolume] = useState(0.5);
 
   // 0th index audio will be played initially
   const audioRef = useRef(new Audio(total[0]?.preview_url));
@@ -103,6 +105,10 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    audioRef.current.volume = volume;
+  }, [isPlaying, volume]);
+
   // handlenext and handlePrev
   const handleNext = () => {
     if (currentIndex < total.length - 1) {
@@ -122,6 +128,10 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
 
   const addZero = (n: number) => {
     return n > 9 ? "" + n : "0" + n;
+  };
+
+  const handleVolumeChange = (value: any) => {
+    setVolume(value);
   };
 
   const artist: any[] = [];
@@ -160,6 +170,9 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
             handlePrev={handlePrev}
             total={total.length}
           />
+          <div className="volume-controls">
+            <Slider value={volume} onChange={handleVolumeChange} />
+          </div>
         </div>
       </div>
     </div>

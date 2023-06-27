@@ -53,3 +53,22 @@
   margin: 0;
   color: #0e1115;
 }
+
+.volume-controls {
+  display: flex;
+  align-items: center;
+}
+
+.volume-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #c96850;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.volume-controls button:hover {
+  background-color: #a9533a;
+}
