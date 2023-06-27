@@ -5,6 +5,7 @@ import options from "../../spotifyAPI";
 import { IconContext } from "react-icons";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import Music from "../../utils/music.svg";
 
 const Library = () => {
   const [albums, setAlbums] = useState([]);
@@ -30,6 +31,17 @@ const Library = () => {
 
   return (
     <div className="screen-container">
+      <div className="upper-container flex">
+        <div className="screen-left">
+          <img className="music-svg" src={Music} alt="music" />
+        </div>
+        <div className="screen-right">
+          <div className="right-contents">
+            <p className="right-title">Your Favorite Tunes</p>
+            <p className="right-subtitle">All ☀️ and All 🌙</p>
+          </div>
+        </div>
+      </div>
       <div className="library-body">
         {albums.map((album) => {
           const newData = album["data"];
