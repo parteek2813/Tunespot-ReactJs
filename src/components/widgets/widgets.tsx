@@ -12,7 +12,7 @@ interface WidgetsProps {
 const Widgets: React.FC<WidgetsProps> = (props) => {
   const [similar, setSimilar] = useState([]);
   const [featured, setFeatured] = useState([]);
-  const [newRelease, setNewRelease] = useState([]);
+  const [newPodcast, setNewPodcast] = useState([]);
   const { artistID } = props;
   const Aid = artistID?.id;
   //   console.log(artistID?.id); // gettting id here
@@ -80,7 +80,7 @@ const Widgets: React.FC<WidgetsProps> = (props) => {
             },
           });
           const c = response.data;
-          setNewRelease(c);
+          setNewPodcast(c);
           requestCounter++;
         } catch (error) {
           console.log("Errror has occured in getting Featured Playlists");
@@ -98,19 +98,19 @@ const Widgets: React.FC<WidgetsProps> = (props) => {
           title="Similar Artists"
           similar={similar}
           featured={featured}
-          newRelease={newRelease}
+          Podcast={newPodcast}
         />
         <WidgetCard
           title="Similar Artists"
           similar={similar}
           featured={featured}
-          newRelease={newRelease}
+          Podcast={newPodcast}
         />
         <WidgetCard
           title="Similar Artists"
           similar={similar}
           featured={featured}
-          newRelease={newRelease}
+          Podcast={newPodcast}
         />
       </div>
     </>

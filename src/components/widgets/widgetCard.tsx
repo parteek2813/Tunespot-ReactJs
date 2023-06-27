@@ -2,23 +2,29 @@ import React from "react";
 import "./widgetCard.css";
 import { IconContext } from "react-icons";
 import { FiChevronRight } from "react-icons/fi";
+import WidgetEntry from "./widgetEntry";
 
 interface WidgetCardProps {
   title: string;
   similar: Array<any> | any[];
   featured: Object | any[];
-  newRelease: Object | any[];
+  Podcast: Object | any[];
 }
 const WidgetCard: React.FC<WidgetCardProps> = (props) => {
-  const { title, similar, featured, newRelease } = props;
+  const { title, similar, featured, Podcast } = props;
 
   const FeaturedArray = Object.entries(featured);
-  const NewReleaseArray = Object.entries(newRelease);
+  const PodCastArray = Object.entries(Podcast);
 
+  // Featured Constants
   const Fname = FeaturedArray[4]?.[1];
   const Flength = FeaturedArray[7]?.[0].length;
   const FImage = FeaturedArray[3]?.[1]?.[0]?.url;
 
+  // New Release Constants
+  const Pname = PodCastArray[0]?.[1]?.podcastUnionV2?.name;
+
+  //   console.log(Pname);
   //   console.log(NewReleaseArray);
   //   console.log(Fname);
   //   console.log(Flength);
@@ -36,7 +42,7 @@ const WidgetCard: React.FC<WidgetCardProps> = (props) => {
     <div className="widgetcard-body">
       <p className="widget-title">{title}</p>
 
-      {/* {similar ? (
+      {similar ? (
         similar.map((artist) => (
           <WidgetEntry
             title={artist?.name}
@@ -50,15 +56,9 @@ const WidgetCard: React.FC<WidgetCardProps> = (props) => {
           subtitle={Flength + " Songs"}
           image={FImage}
         />
-      ) : newRelease ? (
-        newRelease.map((album) => (
-          <WidgetEntry
-            title={album?.name}
-            subtitle={album?.artists[0]?.name}
-            image={album?.images[2]?.url}
-          />
-        ))
-      ) : null} */}
+      ) : PodCastArray ? (
+        <WidgetEntry title={Pname} subtitle={""} image={""} />
+      ) : null}
 
       <div className="widget-fade">
         <div className="fade-button">
