@@ -5,6 +5,7 @@ import WaveAnimation from "./waveAnimation";
 import Controls from "./controls";
 import { Tracks } from "../../utils/types";
 import Slider from "./slider";
+import { log } from "console";
 
 interface TracksProps {
   total: Tracks[];
@@ -89,7 +90,7 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
 
     if (isReady.current) {
       audioRef.current.play();
-      setIsPlaying(true);
+      setIsPlaying(false);
       startTimer();
     } else {
       isReady.current = true;
@@ -145,8 +146,7 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
       <div className="player-left-body">
         <ProgressCircle
           percentage={currentPercentage}
-          isPlaying={true}
-          //   image={}
+          isPlaying={isPlaying}
           size={300}
           color="#C96850"
           strokeWidth={""}
