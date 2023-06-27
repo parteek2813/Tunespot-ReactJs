@@ -5,12 +5,7 @@
   border-top-right-radius: 0px;
   background-color: grey;
   opacity: 1;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      grey 40px
-    ),
-    repeating-linear-gradient(#4767d055, #6376b5);
+  background: #bcc5fb;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -26,7 +21,7 @@
 .upNext {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: black;
   text-align: left;
   margin: 5px 0px;
 }
@@ -47,7 +42,7 @@
   padding: 5px 0px;
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: black;
   cursor: pointer;
   transition: all 0.2s ease;
 }

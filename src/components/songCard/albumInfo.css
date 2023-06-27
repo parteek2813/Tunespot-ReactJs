@@ -49,13 +49,6 @@
 }
 
 .btn-gradient-2 {
-  background: linear-gradient(white, white) padding-box,
-    linear-gradient(to right, darkblue, darkorchid) border-box;
-  border-radius: 50em;
-  border: 4px solid transparent;
-}
-
-.btn-gradient-2 {
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -64,4 +57,13 @@
   color: darkblue;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+}
+
+.btn-gradient-2:hover {
+  background: lightcoral;
+  color: black;
 }

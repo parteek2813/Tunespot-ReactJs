@@ -3,11 +3,12 @@
   width: 24%;
   height: 79%;
   border-radius: 30px;
-  background: rgb(30, 42, 62);
+  background: rgb(113, 143, 184);
   background: linear-gradient(
-    75deg,
-    rgb(40, 58, 88) 0%,
-    rgba(54, 69, 98, 0) 100%
+    90deg,
+    rgba(113, 143, 184, 1) 0%,
+    rgba(188, 197, 251, 1) 26%,
+    rgba(146, 129, 195, 1) 100%
   );
   padding: 1% 3%;
   transition: all 0.2s ease-in-out;
@@ -21,7 +22,7 @@
 .widget-title {
   font-size: 18px;
   font-weight: 800;
-  color: #c4d0e3;
+  color: black;
 }
 
 .widget-fade {
