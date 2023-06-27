@@ -1,0 +1,44 @@
+.favorites-container {
+  margin-top: 20px;
+}
+
+.favorites-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.favorites-message {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.favorites-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.favorite-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.favorite-details {
+  flex: 1;
+}
+
+.favorite-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.favorite-subtitle {
+  font-size: 16px;
+}

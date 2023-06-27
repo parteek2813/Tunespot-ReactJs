@@ -3,16 +3,19 @@ import "./library.css";
 import axios from "axios";
 import options from "../../spotifyAPI";
 import { IconContext } from "react-icons";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPlayCircle, AiFillHeart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Music from "../../utils/music.svg";
+import Favorites from "../favorites/favorites";
 
 const Library = () => {
   const [albums, setAlbums] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     fetchData();
   }, []);
+
   const fetchData = async () => {
     try {
       const response = await axios.request(options);
@@ -27,6 +30,20 @@ const Library = () => {
 
   const playPLayList = (id: string) => {
     navigate("/player", { state: { id: id } });
+  };
+
+  const addToFavorites = (albumId: string) => {
+    const albumToAdd = albums.find(
+      (album) => album["data"]?.["uri"] === albumId
+    );
+    if (albumToAdd) {
+      setFavorites([...favorites, albumToAdd]);
+    }
+    // console.log(favorites);
+  };
+
+  const navigateToFavorites = () => {
+    navigate("/favorites", { state: { favorites: favorites } });
   };
 
   return (
@@ -70,11 +87,26 @@ const Library = () => {
                 >
                   <AiFillPlayCircle />
                 </IconContext.Provider>
+
+                <button
+                  className="favorite-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addToFavorites(newId);
+                  }}
+                >
+                  <AiFillHeart />
+                </button>
               </div>
             </div>
           );
         })}
       </div>
+      <button className="favorites-link" onClick={navigateToFavorites}>
+        Go to Favorites
+      </button>
+
+      {favorites.length > 0 && <Favorites favorites={favorites} />}
     </div>
   );
 };

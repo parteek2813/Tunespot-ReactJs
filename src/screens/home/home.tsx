@@ -37,7 +37,7 @@ const Home = () => {
             <Route path="/feed" element={<UserFeed />} />
             <Route path="/trending" element={<Library />} />
             <Route path="/player" element={<Player />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favorites" element={<Favorites favorites={[]} />} />
           </Routes>
         </div>
       </Router>
