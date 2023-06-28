@@ -14,29 +14,29 @@ Tunespot allows users to discover and listen to music from various genres and ar
 ## Screenshots
 
 1) Home Screen
-![Alt text](../Markdown/home.png)
+![Alt text](Markdown/home.png)
 
 2) Player Screen 
 
 ##### Player Stopped:
-![Alt text](../Markdown/player-stop.png)
+![Alt text](Markdown/player-stop.png)
 
 ##### Player Played:
-![Alt text](../Markdown/player-play.png)
+![Alt text](Markdown/player-play.png)
 
 3) Auth using Keycloack
 
 ##### Login Screen: 
-![Alt text](../Markdown/login.png)
+![Alt text](Markdown/login.png)
 
 ##### Register Screen: 
-![Alt text](../Markdown/register.png)
+![Alt text](Markdown/register.png)
 
 4) Search Screen
-![Alt text](../Markdown/search.png)
+![Alt text](Markdown/search.png)
 
 5) Favorites Screen
-![Alt text](../Markdown/fav-songs.png)
+![Alt text](Markdown/fav-songs.png)
 
 
 
