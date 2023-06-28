@@ -98,6 +98,7 @@ const Library: React.FC<LibraryProps> = (props) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       addToFavorites(newId);
+                      changeFav({ favorites });
                     }}
                   >
                     <AiFillHeart />
@@ -107,11 +108,11 @@ const Library: React.FC<LibraryProps> = (props) => {
             );
           })}
         </div>
+
         {/* <button className="favorites-link" onClick={navigateToFavorites}>
           Go to Favorites
         </button> */}
-
-        <button onClick={() => changeFav({ favorites })}>Press here</button>
+        {/* <button onClick={() => changeFav({ favorites })}>Press here</button> */}
         {/* {favorites.length > 0 && <Favorites favorites={favorites} />} */}
       </div>
     </>

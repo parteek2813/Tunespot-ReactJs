@@ -38,6 +38,13 @@ const Favorites: React.FC<FavoriteProps> = (props) => {
                   Released: {album?.data?.date?.year}
                 </p>
               </div>
+              <a
+                href={album?.data?.uri}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-gradient-2"> Listen!</button>
+              </a>
             </li>
           ))}
         </ul>
