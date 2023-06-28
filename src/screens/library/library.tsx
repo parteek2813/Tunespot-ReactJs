@@ -70,6 +70,7 @@ const Library: React.FC<LibraryProps> = (props) => {
             const newImage = album["data"]["coverArt"]["sources"][0];
             const newDate = album["data"]["date"]["year"];
             const newId = album["data"]["uri"];
+            console.log(newData?.["name"]);
 
             return (
               <>
@@ -83,6 +84,9 @@ const Library: React.FC<LibraryProps> = (props) => {
                     className="album-image"
                     alt="album-imagealt"
                   ></img>
+                  {/* <p className="album-title"></p> */}
+
+                  <p className="album-subtitle">{newData?.["name"]}</p>
 
                   <div className="album-fade">
                     <IconContext.Provider
@@ -114,6 +118,12 @@ const Library: React.FC<LibraryProps> = (props) => {
                   </div>
                 </div>
               </>
+              //   <div>
+              // <p className="album-title">{newData["name"]}</p>
+              // <p className="album-subtitle" style={{ marginLeft: 55 }}>
+              //   Realesed: {newDate}
+              // </p>
+              // </div>
             );
           })}
         </div>
