@@ -15,7 +15,6 @@ const Widgets: React.FC<WidgetsProps> = (props) => {
   const [newPodcast, setNewPodcast] = useState([]);
   const { artistID } = props;
   const Aid = artistID?.id;
-  //   console.log(artistID?.id); // gettting id here
 
   useEffect(() => {
     let requestCounter = 0;

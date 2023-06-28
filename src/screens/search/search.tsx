@@ -34,7 +34,6 @@ const Search = () => {
 
   // search
   async function search() {
-    console.log("Searching for " + searchInput);
 
     // Get request using search to get the ArtistId
 
@@ -56,7 +55,7 @@ const Search = () => {
         }
       });
 
-    console.log("Artist id " + artistID);
+
     // Get request with Artist Id grab all the albums from that artist
 
     var returnedAlbums = await fetch(
@@ -68,12 +67,10 @@ const Search = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setAlbums(data.items);
       });
     // Display those albums to the user
   }
-  console.log(albums);
 
   return (
     <div className="App" style={{ width: "100%" }}>
@@ -96,7 +93,6 @@ const Search = () => {
       <Container>
         <Row className="mx-2 row row-cols-5">
           {albums.map((album: any, i: any) =>{
-            console.log(album);
               return (
                 <Card className="mb-3 mx-2" style={{ width: "12rem",height: "auto" }}>
                 <Card.Img variant="top" src={album?.images[0].url} />

@@ -1,16 +1,14 @@
 import React from "react";
 import Home from "./screens/home/home";
 import Public from "./components/public";
-import Protected from "./components/protected";
 import UseAuth from "./hooks/useAuth";
 
 function App() {
-  const isLogin = UseAuth(); // return either true or false
+  const isLogin = UseAuth();
 
   console.log(isLogin);
   return isLogin ? <Home /> : <Public />;
-
-  //  <div className="App">{/* <Home /> */}</div>;
+ 
 }
 
 export default App;

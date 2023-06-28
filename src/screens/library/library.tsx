@@ -118,21 +118,10 @@ const Library: React.FC<LibraryProps> = (props) => {
                   </div>
                 </div>
               </>
-              //   <div>
-              // <p className="album-title">{newData["name"]}</p>
-              // <p className="album-subtitle" style={{ marginLeft: 55 }}>
-              //   Realesed: {newDate}
-              // </p>
-              // </div>
+
             );
           })}
         </div>
-
-        {/* <button className="favorites-link" onClick={navigateToFavorites}>
-          Go to Favorites
-        </button> */}
-        {/* <button onClick={() => changeFav({ favorites })}>Press here</button> */}
-        {/* {favorites.length > 0 && <Favorites favorites={favorites} />} */}
       </div>
     </>
   );

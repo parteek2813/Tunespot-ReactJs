@@ -5,7 +5,6 @@ import WaveAnimation from "./waveAnimation";
 import Controls from "./controls";
 import { Tracks } from "../../utils/types";
 import Slider from "./slider";
-import { log } from "console";
 
 interface TracksProps {
   total: Tracks[];
@@ -16,7 +15,6 @@ interface currentTrack {
   name: string;
 }
 
-// flow -- songCard.tsx to albumInfo.tsx with albuminfos / albumUrl.tsx with url's
 
 interface audioPlayerProps {
   currentTrack: currentTrack | any;
@@ -96,7 +94,6 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
       isReady.current = true;
     }
   }, [currentIndex]);
-  //   console.log(currentTrack);
 
   // cleanup useEffect and tracks
   useEffect(() => {
@@ -136,7 +133,6 @@ const AudioPlayer: React.FC<BigProps> = (props) => {
   };
 
   const artist: any[] = [];
-  // name location: currentTrack.artists[0].name
   currentTrack?.artists?.forEach((element: any) => {
     artist.push(element.name);
   });
