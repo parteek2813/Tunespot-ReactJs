@@ -8,16 +8,17 @@ a {
   color: #c8bfcb;
   display: flex;
   align-items: center;
-  margin-left: 10px;
   transition: all 0.2s ease;
   background-color: rgb(94, 84, 212, 0);
+  display: flex;
+  justify-content: center;
 }
 
 .btn-body:hover {
   color: white;
 }
 .btn-body.active {
-  background-color: #5e54d4;
+  background-color: #111018;
   color: #fff;
   transform: scale(1.05);
 }

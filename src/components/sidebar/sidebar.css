@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: black;
 }
 
 .profile-body {
@@ -24,7 +25,7 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: #2c2929;
+  color: #fcf2f2;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
