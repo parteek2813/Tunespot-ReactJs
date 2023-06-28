@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+#  Tunespot, a web application built with React.js and TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tunespot allows users to discover and listen to music from various genres and artists.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Browse and search for music tracks, albums, and artists.
+- Play music tracks and control playback with beautiful audioplayer screen.
+- Explore recommended tracks, similar artists based on user current track playing.
+- Add your most liked songs to Favorites Page
+- User authentication is Done by Keycloack [User has to Login First or register if not signed up yet for the First time before accessing application ].
+- Responsive design for seamless user experience on different devices.
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1) Home Screen
+![Alt text](../Markdown/home.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2) Player Screen 
 
-### `npm test`
+##### Player Stopped:
+![Alt text](../Markdown/player-stop.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Player Played:
+![Alt text](../Markdown/player-play.png)
 
-### `npm run build`
+3) Auth using Keycloack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Login Screen: 
+![Alt text](../Markdown/login.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### Register Screen: 
+![Alt text](../Markdown/register.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4) Search Screen
+![Alt text](../Markdown/search.png)
 
-### `npm run eject`
+5) Favorites Screen
+![Alt text](../Markdown/fav-songs.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run the Tunespot-ReactJs application locally, follow these steps:
 
-## Learn More
+1. Clone the repository to your local machine using the following command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        `git clone https://github.com/parteek2813/Tunespot-ReactJs.git`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navigate to the project directory:
+
+        `cd Tunespot-ReactJs`
+
+3. Install the dependencies using npm:
+
+        `npm install`
+
+4. Start the development server:
+
+        `npm start`
+
+
+
+
