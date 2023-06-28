@@ -51,12 +51,12 @@
 
 .playlist-card {
   position: relative;
-  width: 15%;
-  height: 45%;
-  border-radius: 20px;
+  width: 13%;
+  height: 26%;
+  border-radius: 16px;
   background-color: #acb9cf;
   border: 1px solid #a6a1a1;
-  padding: 1%;
+  padding: 1.5%;
   margin-bottom: 2%;
   background: rgb(143, 170, 215);
   background: linear-gradient(
@@ -67,6 +67,8 @@
   );
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  margin-left: 10px;
 }
 
 .playlist-card:hover {
@@ -79,8 +81,9 @@
 
 .album-image {
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: 15px;
+  height: 100%;
+  /* aspect-ratio: 1; */
+  border-radius: 10px;
 }
 
 .album-title {
@@ -119,4 +122,75 @@
   padding: 8%;
   padding-bottom: 0%;
   transition: 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+}
+
+.favorite-button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #7db6c5;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.favorite-button:before {
+  content: "";
+  background: linear-gradient(45deg, #00ffd5, #fdfcfe, black);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 80%;
+}
+
+.favorite-button:active {
+  color: #7db6c5;
+}
+
+.favorite-button:active:after {
+  background: transparent;
+}
+
+.favorite-button:hover:before {
+  opacity: 1;
+}
+
+.favorite-button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #7db6c5;
+  left: 0;
+  top: 0;
+  border-radius: 80%;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

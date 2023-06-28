@@ -3,7 +3,7 @@ import "./library.css";
 import axios from "axios";
 import options from "../../spotifyAPI";
 import { IconContext } from "react-icons";
-import { AiFillPlayCircle, AiFillHeart } from "react-icons/ai";
+import { AiFillPlayCircle, AiTwotoneHeart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Music from "../../utils/music.svg";
 import Favorites from "../favorites/favorites";
@@ -82,13 +82,16 @@ const Library: React.FC<LibraryProps> = (props) => {
                   className="album-image"
                   alt="album-imagealt"
                 ></img>
-                <p className="album-title">{newData["name"]}</p>
+                {/* <p className="album-title">{newData["name"]}</p>
                 <p className="album-subtitle" style={{ marginLeft: 55 }}>
                   Realesed: {newDate}
-                </p>
+                </p> */}
                 <div className="album-fade">
                   <IconContext.Provider
-                    value={{ size: "50px", color: "#E99D72" }}
+                    value={{
+                      size: "40px",
+                      color: "#E99D72",
+                    }}
                   >
                     <AiFillPlayCircle />
                   </IconContext.Provider>
@@ -101,7 +104,14 @@ const Library: React.FC<LibraryProps> = (props) => {
                       changeFav({ favorites });
                     }}
                   >
-                    <AiFillHeart />
+                    <IconContext.Provider
+                      value={{
+                        size: "30px",
+                        color: "#E99D72",
+                      }}
+                    >
+                      <AiTwotoneHeart />
+                    </IconContext.Provider>
                   </button>
                 </div>
               </div>
