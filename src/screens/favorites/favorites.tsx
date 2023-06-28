@@ -2,11 +2,16 @@ import React, { useEffect } from "react";
 import "./favorites.css";
 
 interface FavoriteProps {
-  favorites: Array<any>;
+  favorites: Array<any> | any;
 }
 
 const Favorites: React.FC<FavoriteProps> = (props) => {
   const { favorites } = props;
+  console.log(favorites);
+
+  {
+    favorites && console.log(favorites.favorites);
+  }
 
   useEffect(() => {}, [favorites]);
 
@@ -20,10 +25,10 @@ const Favorites: React.FC<FavoriteProps> = (props) => {
         </p>
       ) : (
         <ul className="favorites-list">
-          {favorites.map((album) => (
+          {favorites.favorites.map((album: any) => (
             <li key={album?.data?.uri} className="favorite-item">
               <img
-                src={album?.data?.coverArt?.sources?.url}
+                src={album?.data?.coverArt?.sources?.[0].url}
                 alt="album-cover"
                 className="favorite-image"
               />

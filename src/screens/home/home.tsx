@@ -11,6 +11,11 @@ import options from "../../spotifyAPI";
 
 const Home = () => {
   const [token, setToken] = useState("");
+  const [fav, setFav] = useState([]);
+
+  const updateFavorites = (updatedFav: any) => {
+    setFav(updatedFav);
+  };
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -23,6 +28,8 @@ const Home = () => {
     }
   }, []);
 
+  console.log(fav);
+
   // return !token ? (
   //   <Login />
   // ) : (
@@ -33,11 +40,11 @@ const Home = () => {
         <div className="main-container">
           <Sidebar />
           <Routes>
-            <Route path="/" element={<Library />} />
+            <Route path="/" element={<Library changeFav={updateFavorites} />} />
             <Route path="/feed" element={<UserFeed />} />
-            <Route path="/trending" element={<Library />} />
+            {/* <Route path="/trending" element={<Library />} /> */}
             <Route path="/player" element={<Player />} />
-            <Route path="/favorites" element={<Favorites favorites={[]} />} />
+            <Route path="/favorites" element={<Favorites favorites={fav} />} />
           </Routes>
         </div>
       </Router>
