@@ -8,6 +8,7 @@ import "./home.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import Login from "../auth/login";
 import options from "../../spotifyAPI";
+import Search from "../search/search";
 
 const Home = () => {
   const [token, setToken] = useState("");
@@ -45,6 +46,7 @@ const Home = () => {
             {/* <Route path="/trending" element={<Library />} /> */}
             <Route path="/player" element={<Player />} />
             <Route path="/favorites" element={<Favorites favorites={fav} />} />
+            <Route path="/Search" element={<Search />} />
           </Routes>
         </div>
       </Router>
