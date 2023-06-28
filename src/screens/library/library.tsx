@@ -72,49 +72,48 @@ const Library: React.FC<LibraryProps> = (props) => {
             const newId = album["data"]["uri"];
 
             return (
-              <div
-                className="playlist-card"
-                key={newId}
-                onClick={() => playPLayList(newId)}
-              >
-                <img
-                  src={newImage["url"]}
-                  className="album-image"
-                  alt="album-imagealt"
-                ></img>
-                {/* <p className="album-title">{newData["name"]}</p>
-                <p className="album-subtitle" style={{ marginLeft: 55 }}>
-                  Realesed: {newDate}
-                </p> */}
-                <div className="album-fade">
-                  <IconContext.Provider
-                    value={{
-                      size: "40px",
-                      color: "#E99D72",
-                    }}
-                  >
-                    <AiFillPlayCircle />
-                  </IconContext.Provider>
+              <>
+                <div
+                  className="playlist-card"
+                  key={newId}
+                  onClick={() => playPLayList(newId)}
+                >
+                  <img
+                    src={newImage["url"]}
+                    className="album-image"
+                    alt="album-imagealt"
+                  ></img>
 
-                  <button
-                    className="favorite-button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      addToFavorites(newId);
-                      changeFav({ favorites });
-                    }}
-                  >
+                  <div className="album-fade">
                     <IconContext.Provider
                       value={{
-                        size: "30px",
+                        size: "40px",
                         color: "#E99D72",
                       }}
                     >
-                      <AiTwotoneHeart />
+                      <AiFillPlayCircle />
                     </IconContext.Provider>
-                  </button>
+
+                    <button
+                      className="favorite-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToFavorites(newId);
+                        changeFav({ favorites });
+                      }}
+                    >
+                      <IconContext.Provider
+                        value={{
+                          size: "30px",
+                          color: "#E99D72",
+                        }}
+                      >
+                        <AiTwotoneHeart />
+                      </IconContext.Provider>
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </>
             );
           })}
         </div>
