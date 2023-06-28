@@ -16,6 +16,7 @@ const CLIENT_SECRET = "6a5b0b36582e4df5896ef02a55fe3144";
 const Search = () => {
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
+  const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     var authParameters = {
@@ -58,7 +59,7 @@ const Search = () => {
     console.log("Artist id " + artistID);
     // Get request with Artist Id grab all the albums from that artist
 
-    var albums = await fetch(
+    var returnedAlbums = await fetch(
       "https://api.spotify.com/v1/artists/" +
         artistID +
         "/albums" +
@@ -68,9 +69,11 @@ const Search = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setAlbums(data.items);
       });
     // Display those albums to the user
   }
+  console.log(albums);
 
   return (
     <div className="App" style={{ width: "100%" }}>
@@ -91,13 +94,24 @@ const Search = () => {
       </Container>
 
       <Container>
-        <Row className="mx-2 row row-cols-4">
-          <Card>
-            <Card.Img src="#" />
-            <Card.Body>
-              <Card.Title>Album Name</Card.Title>
-            </Card.Body>
-          </Card>
+        <Row className="mx-2 row row-cols-5">
+          {albums.map((album: any, i: any) =>{
+            console.log(album);
+              return (
+                <Card className="mb-3 mx-2" style={{ width: "12rem",height: "auto" }}>
+                <Card.Img variant="top" src={album?.images[0].url} />
+                <Card.Body>
+                  <Card.Title>{album?.name}</Card.Title>
+                <Card.Text>{album?.artists[0]?.name}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted text-center" style={{overflow: "break-word"}}>
+                    Release Date: {album?.release_date}
+                  </small>
+                </Card.Footer>
+              </Card>
+              )
+          })}
         </Row>
       </Container>
     </div>
