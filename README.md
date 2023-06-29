@@ -2,6 +2,9 @@
 
 Tunespot allows users to discover and listen to music from various genres and artists.
 
+## Tech Used:
+HTML, CSS , Bootstrap, ReactJs, React-Router-dom, Typescript, Keyclock.  
+
 ## Features
 
 - Browse and search for music tracks, albums, and artists.
