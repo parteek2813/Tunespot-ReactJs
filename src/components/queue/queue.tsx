@@ -9,7 +9,6 @@ interface QueueProps {
 
 const Queue: React.FC<QueueProps> = (props) => {
   const { tracks, setCurrentIndex } = props;
-  // console.log(tracks);
 
   if (!Array.isArray(tracks)) {
     return <div>Error: Invalid tracks data</div>;

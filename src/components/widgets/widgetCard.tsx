@@ -24,19 +24,6 @@ const WidgetCard: React.FC<WidgetCardProps> = (props) => {
   // New Release Constants
   const Pname = PodCastArray[0]?.[1]?.podcastUnionV2?.name;
 
-  //   console.log(Pname);
-  //   console.log(NewReleaseArray);
-  //   console.log(Fname);
-  //   console.log(Flength);
-  //   console.log(FImage);
-  //   console.log(
-  //     "Similar:",
-  //     similar,
-  //     "Featured:",
-  //     featured,
-  //     "NewRelease:",
-  //     newRelease
-  //   );
 
   return (
     <div className="widgetcard-body">

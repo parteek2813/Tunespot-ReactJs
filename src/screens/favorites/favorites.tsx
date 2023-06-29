@@ -7,7 +7,6 @@ interface FavoriteProps {
 
 const Favorites: React.FC<FavoriteProps> = (props) => {
   const { favorites } = props;
-  console.log(favorites);
 
   {
     favorites && console.log(favorites.favorites);

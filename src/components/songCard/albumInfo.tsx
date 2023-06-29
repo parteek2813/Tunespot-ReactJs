@@ -31,7 +31,6 @@ const AlbumInfo: React.FC<AlbumInfoProps> = (props) => {
     artist.push(element.name);
   });
 
-  // console.log(album); // getting the artists array here
 
   return (
     <div className="albumInfo-card">
@@ -41,11 +40,7 @@ const AlbumInfo: React.FC<AlbumInfoProps> = (props) => {
         </div>
       </div>
 
-      {/* <div className="album-info"> */}
-      {/* <p>{`${album.name} is an ${album.type}`}</p> */}
-      {/* </div> */}
       <div className="album-realease"></div>
-
       <div className="parent">
         <a href={album?.uri} target="_blank" rel="noopener noreferrer">
           <button className="btn-gradient-2">Full Listen!</button>

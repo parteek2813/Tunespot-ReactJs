@@ -8,7 +8,6 @@ interface WidgetEntryProps {
 }
 const WidgetEntry: React.FC<WidgetEntryProps> = (props) => {
   const { title, subtitle, image } = props;
-  //   console.log("title:", title, "subtitle:", subtitle, "image:", image);
   return (
     <div className="entry-body flex">
       <img src={image} alt={title} className="entry-image" />

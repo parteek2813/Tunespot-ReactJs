@@ -24,7 +24,6 @@ const Library: React.FC<LibraryProps> = (props) => {
     try {
       const response = await axios.request(options);
       setAlbums(response.data.albums.items);
-      // console.log(response.data.albums?.items[0].data.uri); //getting the uri
     } catch (error) {
       console.log("Errror has occured in fetchData");
     }
@@ -43,12 +42,9 @@ const Library: React.FC<LibraryProps> = (props) => {
     if (albumToAdd) {
       setFavorites([...favorites, albumToAdd]);
     }
-    // console.log(favorites);
+   
   };
 
-  // const navigateToFavorites = () => {
-  //   navigate("/favorites", { state: { favorites: favorites } });
-  // };
 
   return (
     <>
@@ -70,7 +66,6 @@ const Library: React.FC<LibraryProps> = (props) => {
             const newImage = album["data"]["coverArt"]["sources"][0];
             const newDate = album["data"]["date"]["year"];
             const newId = album["data"]["uri"];
-            console.log(newData?.["name"]);
 
             return (
               <>
@@ -84,7 +79,6 @@ const Library: React.FC<LibraryProps> = (props) => {
                     className="album-image"
                     alt="album-imagealt"
                   ></img>
-                  {/* <p className="album-title"></p> */}
 
                   <p className="album-subtitle">{newData?.["name"]}</p>
 

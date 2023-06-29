@@ -29,12 +29,6 @@ const Home = () => {
     }
   }, []);
 
-  console.log(fav);
-
-  // return !token ? (
-  //   <Login />
-  // ) : (
-
   return (
     <>
       <Router>
@@ -43,7 +37,6 @@ const Home = () => {
           <Routes>
             <Route path="/" element={<Library changeFav={updateFavorites} />} />
             <Route path="/feed" element={<UserFeed />} />
-            {/* <Route path="/trending" element={<Library />} /> */}
             <Route path="/player" element={<Player />} />
             <Route path="/favorites" element={<Favorites favorites={fav} />} />
             <Route path="/Search" element={<Search />} />

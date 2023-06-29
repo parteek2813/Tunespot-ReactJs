@@ -19,11 +19,6 @@ const UseAuth = () => {
     if (isRun.current) return;
 
     isRun.current = true;
-
-    // if user is not logged in then user is redirected to keycloak
-    // for authentication and after that it return back and then return auth state
-    // setLogin
-
     keycloak
       .init({ onLoad: "login-required" })
       .then((res) => {

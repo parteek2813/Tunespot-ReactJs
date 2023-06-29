@@ -14,7 +14,6 @@ interface ControlProps {
 
 const Controls: React.FC<ControlProps> = (props) => {
   const { isPlaying, setIsPlaying, handleNext, handlePrev, total } = props;
-  // console.log(isPlaying); // true
   return (
     <>
       <IconContext.Provider value={{ size: "35px", color: "#000000" }}>

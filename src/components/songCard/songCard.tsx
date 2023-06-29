@@ -8,7 +8,6 @@ interface Album {
   name: string;
 }
 
-// flow -- songCard.tsx to albumInfo.tsx with albuminfos / albumUrl.tsx with url's
 
 interface SongCardProps {
   album: Album | any;

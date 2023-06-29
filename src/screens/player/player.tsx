@@ -8,7 +8,6 @@ import Queue from "../../components/queue/queue";
 import { Tracks } from "../../utils/types";
 import AudioPlayer from "../../components/audioPlayer/audioPlayer";
 import Widgets from "../../components/widgets/widgets";
-// Import Tracks interface
 
 const Player = () => {
   // Get the id of the albums
@@ -22,7 +21,6 @@ const Player = () => {
   useEffect(() => {
     if (newLocation) {
       fetchData();
-      // console.log(tracks);
     }
   }, [location["state"]]);
 
@@ -41,14 +39,8 @@ const Player = () => {
 
       settracks(response.data.albums[0].tracks.items);
       setCurrentTrack(response.data.albums[0].tracks.items[0]);
-      // console.log(currentTrack); // it has id
-      // console.log(response.data.albums[0].tracks.items[0]);
       setImageUrl(response.data.albums[0].images[0].url);
-      // console.log(response.data);
-      // tracks link "name" = resoponse.data.albums[0].tracks.items[0].name
-      // images link "url" = response.data.albums[0].images[0].url;
-
-      // console.log(response.data.albums[0].images[0].url);
+      
     } catch (error) {
       console.log("Errror has occured in fetchData");
     }
