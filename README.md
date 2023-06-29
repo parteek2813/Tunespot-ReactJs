@@ -8,7 +8,7 @@ Tunespot allows users to discover and listen to music from various genres and ar
 - Play music tracks and control playback with beautiful audioplayer screen.
 - Explore recommended tracks, similar artists based on user current track playing.
 - Add your most liked songs to Favorites Page
-- User authentication is Done by Keycloack [User has to Login First or register if not signed up yet for the First time before accessing application ].
+- User authentication is Done by Keycloak [User has to Login First or register if he has not signed up yet for the First time before accessing application ].
 - Responsive design for seamless user experience on different devices.
 
 ## Screenshots
@@ -60,6 +60,7 @@ To run the Tunespot-ReactJs application locally, follow these steps:
 
         `npm start`
 
+Thanks!
 
 
 
